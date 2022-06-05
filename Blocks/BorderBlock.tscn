@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Blocks/1x1Block.tscn" type="PackedScene" id=1]
+
+[node name="BorderBlock" instance=ExtResource( 1 )]
+modulate = Color( 0.172549, 0.172549, 0.172549, 1 )
