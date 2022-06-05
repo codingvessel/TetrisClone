@@ -159,3 +159,7 @@ OBlock = ExtResource( 5 )
 JBlock = ExtResource( 4 )
 LBlock = ExtResource( 7 )
 IBlock = ExtResource( 3 )
+
+[node name="Tick" type="Timer" parent="BlockSpawner"]
+
+[connection signal="timeout" from="BlockSpawner/Tick" to="BlockSpawner" method="_on_Tick_timeout"]
