@@ -9,16 +9,14 @@ export (PackedScene) var JBlock
 export (PackedScene) var LBlock
 export (PackedScene) var IBlock
 
-
+onready var blocks = [SBlock, ZBlock, OBlock, JBlock, LBlock, IBlock]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	spawn_block()
 	
 func spawn_block():
-	var block = SBlock.instance()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	randomize()
+	blocks.shuffle()
+	var block = blocks[0].instance()
+	add_child(block)
