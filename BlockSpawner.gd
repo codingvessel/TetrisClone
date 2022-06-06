@@ -1,16 +1,12 @@
 extends Node2D
 
-var active_block
+export (Array, PackedScene) var blocks
+
 onready var tick = $Tick
+onready var spawn_position = $SpawnPosition
 
-export (PackedScene) var SBlock
-export (PackedScene) var ZBlock
-export (PackedScene) var OBlock
-export (PackedScene) var JBlock
-export (PackedScene) var LBlock
-export (PackedScene) var IBlock
+var active_block :GeneralBlock
 
-onready var blocks = [SBlock, ZBlock, OBlock, JBlock, LBlock, IBlock]
 
 func _ready():
 	spawn_block()
@@ -20,10 +16,26 @@ func spawn_block():
 	randomize()
 	blocks.shuffle()
 	var block = blocks[0].instance()
+	block.global_position = spawn_position.position
 	active_block = block
 	add_child(block)
 
-
-
 func _on_Tick_timeout():
 	active_block.move_one_step()
+
+func _process(delta):
+	if Input.is_action_just_pressed("ui_right"):
+		active_block.move_right()
+		
+	if Input.is_action_just_pressed("ui_left"):
+		active_block.move_left()
+		
+	if Input.is_action_pressed("ui_down"):
+		active_block.move_one_step()
+	
+	if Input.is_action_just_pressed("ui_up"):
+		active_block.rotate_block()
+
+
+
+

@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Blocks/BorderBlock.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Background.png" type="Texture" id=1]
 [ext_resource path="res://BlockSpawner.gd" type="Script" id=2]
 [ext_resource path="res://Blocks/IBlock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Blocks/JBlock.tscn" type="PackedScene" id=4]
@@ -8,158 +8,34 @@
 [ext_resource path="res://Blocks/SBlock.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Blocks/LBlock.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Blocks/ZBlock.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Blocks/TBlock.tscn" type="PackedScene" id=9]
 
 [node name="Game" type="Node2D"]
 position = Vector2( -64, 64 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 24, -58 )
+position = Vector2( 40, 80 )
 current = true
 
-[node name="Grid" type="Node2D" parent="."]
-
-[node name="BorderBlock" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( -24, 8 )
-
-[node name="BorderBlock14" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( -24, 0 )
-
-[node name="BorderBlock15" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( -24, -8 )
-
-[node name="BorderBlock16" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( -24, -16 )
-
-[node name="BorderBlock17" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( -24, -24 )
-
-[node name="BorderBlock18" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( -24, -32 )
-
-[node name="BorderBlock19" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( -24, -40 )
-
-[node name="BorderBlock20" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( -24, -48 )
-
-[node name="BorderBlock21" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( -24, -56 )
-
-[node name="BorderBlock22" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( -24, -64 )
-
-[node name="BorderBlock23" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( -24, -72 )
-
-[node name="BorderBlock24" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( -24, -80 )
-
-[node name="BorderBlock25" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( -24, -88 )
-
-[node name="BorderBlock26" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( -24, -96 )
-
-[node name="BorderBlock27" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( -24, -104 )
-
-[node name="BorderBlock28" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( -24, -112 )
-
-[node name="BorderBlock29" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( -24, -120 )
-
-[node name="BorderBlock30" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 64, 0 )
-
-[node name="BorderBlock31" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 64, -8 )
-
-[node name="BorderBlock32" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 64, -16 )
-
-[node name="BorderBlock33" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 64, -24 )
-
-[node name="BorderBlock34" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 64, -32 )
-
-[node name="BorderBlock35" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 64, -40 )
-
-[node name="BorderBlock36" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 64, -48 )
-
-[node name="BorderBlock37" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 64, -56 )
-
-[node name="BorderBlock38" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 64, -64 )
-
-[node name="BorderBlock39" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 64, -72 )
-
-[node name="BorderBlock40" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 64, -80 )
-
-[node name="BorderBlock41" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 64, -88 )
-
-[node name="BorderBlock42" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 64, -96 )
-
-[node name="BorderBlock43" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 64, -104 )
-
-[node name="BorderBlock44" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 64, -112 )
-
-[node name="BorderBlock45" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 64, -120 )
-
-[node name="BorderBlock2" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( -16, 8 )
-
-[node name="BorderBlock3" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( -8, 8 )
-
-[node name="BorderBlock4" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 0, 8 )
-
-[node name="BorderBlock5" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 8, 8 )
-
-[node name="BorderBlock6" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 16, 8 )
-
-[node name="BorderBlock7" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 24, 8 )
-
-[node name="BorderBlock8" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 32, 8 )
-
-[node name="BorderBlock9" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 40, 8 )
-
-[node name="BorderBlock10" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 48, 8 )
-
-[node name="BorderBlock11" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 56, 8 )
-
-[node name="BorderBlock12" parent="Grid" instance=ExtResource( 1 )]
-position = Vector2( 64, 8 )
-
 [node name="BlockSpawner" type="Node2D" parent="."]
-position = Vector2( 16, -120 )
 script = ExtResource( 2 )
-SBlock = ExtResource( 6 )
-ZBlock = ExtResource( 8 )
-OBlock = ExtResource( 5 )
-JBlock = ExtResource( 4 )
-LBlock = ExtResource( 7 )
-IBlock = ExtResource( 3 )
+blocks = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 8 ) ]
 
 [node name="Tick" type="Timer" parent="BlockSpawner"]
+
+[node name="SpawnPosition" type="Position2D" parent="BlockSpawner"]
+position = Vector2( 44, 4 )
+
+[node name="Background" type="Sprite" parent="."]
+modulate = Color( 0.215686, 0.203922, 0.305882, 0.803922 )
+z_index = -1
+texture = ExtResource( 1 )
+centered = false
+
+[node name="LeftBorderPos" type="Position2D" parent="."]
+position = Vector2( -4, 52 )
+
+[node name="RightBorderPos" type="Position2D" parent="."]
+position = Vector2( 92, 52 )
 
 [connection signal="timeout" from="BlockSpawner/Tick" to="BlockSpawner" method="_on_Tick_timeout"]

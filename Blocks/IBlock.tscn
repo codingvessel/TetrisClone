@@ -5,8 +5,8 @@
 [node name="IBlock" instance=ExtResource( 1 )]
 modulate = Color( 0.560784, 0.0117647, 0.0117647, 1 )
 
-[node name="1x1Block" parent="." index="1"]
+[node name="1x1Block" parent="." index="0"]
 position = Vector2( 0, -16 )
 
-[node name="1x1Block2" parent="." index="2"]
+[node name="1x1Block2" parent="." index="1"]
 position = Vector2( 0, 8 )
