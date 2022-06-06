@@ -11,7 +11,6 @@
 [ext_resource path="res://Blocks/TBlock.tscn" type="PackedScene" id=9]
 
 [node name="Game" type="Node2D"]
-position = Vector2( -64, 64 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 40, 80 )

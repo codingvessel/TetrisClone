@@ -33,7 +33,7 @@ func check_valid_position() -> bool:
 		
 		print(rounded_x)
 		print(rounded_y)
-		if (rounded_x < -60) || (rounded_x > 16) || rounded_y > 192:
+		if (rounded_x < 4) || (rounded_x > 76) || rounded_y > 124:
 			return false
-#
+
 	return true
