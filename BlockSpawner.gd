@@ -9,6 +9,7 @@ var active_block :GeneralBlock
 
 
 func _ready():
+	EventBus.connect("block_landed", self, "active_block_landed")
 	spawn_block()
 	tick.start()
 	
@@ -16,9 +17,13 @@ func spawn_block():
 	randomize()
 	blocks.shuffle()
 	var block = blocks[0].instance()
-	block.global_position = spawn_position.position
+	block.position = spawn_position.position
 	active_block = block
 	add_child(block)
+	
+func active_block_landed():
+	active_block = null
+	spawn_block()
 
 func _on_Tick_timeout():
 	active_block.move_one_step()
