@@ -8,8 +8,8 @@ onready var spawn_position = $SpawnPosition
 var active_block :GeneralBlock
 
 var landing_grid = []
-var landing_grid_width = 10 * 8
-var landing_grid_height = 16 * 8
+var landing_grid_width = 10
+var landing_grid_height = 16
 
 
 
@@ -19,16 +19,15 @@ func _ready():
 	tick.start()
 	
 func init_landing_grid():
-	for i in landing_grid_width:
+	for x in landing_grid_width:
 		landing_grid.append([])
-		for j in landing_grid_height:
-			landing_grid[i].append(null)
+		for y in landing_grid_height:
+			landing_grid[x].append(null)
 	
 
 	
 func active_block_landed():
 	add_landed_block_to_grid()
-	active_block = null
 	spawn_block()
 	
 func add_landed_block_to_grid():
@@ -37,21 +36,53 @@ func add_landed_block_to_grid():
 		var rounded_x = round(square.global_position.x) 
 		var rounded_y = round(square.global_position.y)
 		
-		landing_grid[rounded_x][rounded_y] = square.position
+		landing_grid[rounded_x/8][rounded_y/8] = square
 	
 func spawn_block():
 	randomize()
 	blocks.shuffle()
-	var block = blocks[0].instance()
-	block.position = spawn_position.position
-	active_block = block
-	add_child(block)
+	active_block = blocks[0].instance()
+	active_block.position = spawn_position.position
+	add_child(active_block)
 
 func _on_Tick_timeout():
 	active_block.move_down()
 	if(!check_valid_position()):
 		active_block.move_up()
 		active_block_landed()
+		check_lines()
+
+func check_lines():
+	for y in landing_grid_height:
+		if(is_full_line(y)):
+			delete_line(y)
+			push_down(y)
+		
+			
+
+func is_full_line(y) -> bool:
+	for x in landing_grid_width:
+		if(landing_grid[x][y] == null):
+			return false
+			
+	return true
+	
+func delete_line(y):
+	for x in landing_grid_width:
+		var block_to_delete = landing_grid[x][y]
+		block_to_delete.queue_free()
+		landing_grid[x][y] = null
+		
+func push_down(y):
+	print(str("cleared lines height is ", y))
+	for j in range(y, 0, -1):
+		for x in landing_grid_width:
+			if(landing_grid[x][j] != null):
+				landing_grid[x][j+1] = landing_grid[x][j]
+				landing_grid[x][j] = null
+				print(landing_grid[x][j+1].global_position)
+				landing_grid[x][j+1].global_position += Vector2(0,8)
+	
 
 func _process(delta):
 	
@@ -83,7 +114,7 @@ func check_valid_position() -> bool:
 		if (rounded_x < 4) || (rounded_x > 76) || rounded_y > 124:
 			return false
 			
-		if (landing_grid[rounded_x][rounded_y] != null):
+		if (landing_grid[rounded_x/8][rounded_y/8] != null):
 			return false
 
 	return true

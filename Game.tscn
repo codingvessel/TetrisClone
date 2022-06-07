@@ -21,6 +21,7 @@ script = ExtResource( 2 )
 blocks = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 8 ) ]
 
 [node name="Tick" type="Timer" parent="BlockSpawner"]
+wait_time = 0.5
 
 [node name="SpawnPosition" type="Position2D" parent="BlockSpawner"]
 position = Vector2( 44, 4 )
