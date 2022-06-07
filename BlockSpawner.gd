@@ -74,13 +74,11 @@ func delete_line(y):
 		landing_grid[x][y] = null
 		
 func push_down(y):
-	print(str("cleared lines height is ", y))
 	for j in range(y, 0, -1):
 		for x in landing_grid_width:
 			if(landing_grid[x][j] != null):
 				landing_grid[x][j+1] = landing_grid[x][j]
 				landing_grid[x][j] = null
-				print(landing_grid[x][j+1].global_position)
 				landing_grid[x][j+1].global_position += Vector2(0,8)
 	
 
