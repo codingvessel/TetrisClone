@@ -59,7 +59,7 @@ func check_lines():
 			push_down(y)
 		
 			
-
+#checks if every cell in line y is occupied and only then returns true
 func is_full_line(y) -> bool:
 	for x in landing_grid_width:
 		if(landing_grid[x][y] == null):
@@ -74,7 +74,11 @@ func delete_line(y):
 		landing_grid[x][y] = null
 		
 func push_down(y):
+	#for every line above y
 	for j in range(y, 0, -1):
+		#for every occupied cell in this line
+		#move cell down and delete old cell
+		#also update visual component with global position
 		for x in landing_grid_width:
 			if(landing_grid[x][j] != null):
 				landing_grid[x][j+1] = landing_grid[x][j]
